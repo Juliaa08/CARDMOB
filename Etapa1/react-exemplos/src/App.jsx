@@ -10,7 +10,7 @@ import Album from './components/Album';
 function App() {
   const [count, setCount] = useState(0);
   const [photos, setPhotos] = useState([]);
-  const [albumId, setAlbumId] = useState(1); //
+  const [albumId, setAlbumId] = useState(1); //Adicionado ao estado album
 
   const fetchPhotos = async () => {
     try {
@@ -69,30 +69,30 @@ function App() {
   dados.endereco.complementos[1]; // acessando a referência do endereço
 
 
-    return (
-      <>
-        <Counter title="Contando..." />
-        <Counter initial="100" />
-        <article>
-          <h1>Album da API</h1>
-          {photos.map( (photo) => (
-            // <article key={photo.id}>
-            //   <h2>ID #{photo.id} {photo.title}</h2>
-            //   <img src={photo.thumbnailUrl} alt={photo.title} />
-            // </article>
-            <Photo photo={photo} />
-          ))}
-        </article>
-        <div>
-          <button onClick={() => setAlbumId(1)}>Album #1</button>
-          <button onClick={() => setAlbumId(2)}>Album #2</button>
-          <button onClick={() => setAlbumId(3)}>Album #3</button>
-          <button onClick={() => setAlbumId(4)}>Album #4</button>
-        </div>
+  return (
+    <>
+      <Counter title="Contando..." />
+      <Counter initial="100" />
+      {/* <article>
+        <h1>Album da API</h1>
+        {photos.map( (photo) => (
+          // <article key={photo.id}>
+          //   <h2>ID #{photo.id} {photo.title}</h2>
+          //   <img src={photo.thumbnailUrl} alt={photo.title} />
+          // </article>
+          <Photo photo={photo} />
+        ))}
+      </article> */}
+      <div>
+        <button onClick={() => setAlbumId(1)}>Album #1</button>
+        <button onClick={() => setAlbumId(2)}>Album #2</button>
+        <button onClick={() => setAlbumId(3)}>Album #3</button>
+        <button onClick={() => setAlbumId(4)}>Album #4</button>
+      </div>
 
-        <Album albumId={albumId} />
-      </>
-    )
-  }
+      <Album albumId={albumId}></Album>
+    </>
+  )
+}
 
 export default App;
