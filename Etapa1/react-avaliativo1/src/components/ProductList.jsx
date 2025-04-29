@@ -59,7 +59,8 @@ const ProductList = () => {
                     type="text"
                     placeholder="Preço"
                     value={newPrice}
-                    onChange={(e) => setNewPrice(e.target.value)}
+                    onChange={(e) =>
+                         setNewPrice(e.target.value)}
                 />
                 {editing ? (
                     <button onClick={saveEditing}>Salvar</button>
