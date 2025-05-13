@@ -21,16 +21,19 @@ class List extends Component {
                 <Text style={styles.text}>
                     Lista de itens "clicáveis"
                 </Text>
-            {
-                    this.state.names.map((item) => (
-                        <TouchableOpacity key={item.id} onPress={() => this.alertItemName(item)}>
-                            <View style={styles.container}>
-                                <Text style={styles.text}>{item.name}</Text>
-                            </View>
-                        </TouchableOpacity>
+                {
+                    this.state.names.map((item, index) => (
+                        <TouchableOpacity 
+                            key={item.id}
+                            style={styles.container}
+                            onPress={() => this.alertItemName(item)}
+                        >
+                            <Text style={styles.text}>
+                                {item.name}
+                            </Text>
+                        </TouchableOpacity> 
                     ))
-            }
-
+                }
             </View>
         );
     }
