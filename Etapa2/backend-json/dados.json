@@ -1,8 +1,10 @@
 {
-  "items": [
+  "items": [],
+  "compras": [
     {
-      "id": "3cd3",
-      "text": "Novo item"
+      "id": "bc96",
+      "Text": "arroz",
+      "quantidade": 3
     }
   ]
 }
