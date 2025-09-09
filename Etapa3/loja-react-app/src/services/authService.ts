@@ -4,3 +4,29 @@ export async function fakeLogin(email: string, password: string): Promise<string
     }
     return Promise.reject('Credenciais inválidas');
 }
+
+export async function requestLogin(email: string, password: string): Promise<string> {
+    console.log(API_URL);
+    if (email === 'admin@example.com' && password === 'admin123') {
+        try {
+            const response = await fetch(`${API_URL}/api/users/login`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({email, password}),
+            });
+            const data = await response.json();
+            const jwt = data.accessToken;
+            console.log(jwt);
+            return Promise.resolve(jwt);
+        }
+        catch (error) {
+            console.error(error);
+            return Promise.reject(error);
+        }
+    }
+
+
+    return Promise.reject('Credenciais inválidas');
+}
