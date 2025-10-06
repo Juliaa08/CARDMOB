@@ -5,6 +5,7 @@ import { ThemeProvider } from './src/contexts/ThemeContext'; // NOVA
 // import HomeScreen from './src/screens/HomeScreen';
 import RootNavigator from './src/navigation/RootNavigator';
 import { AuthProvider } from './src/contexts/AuthContext';
+import { ShopProvider } from './src/contexts/ShopContext';
 
 
 export default function App() {
@@ -12,6 +13,9 @@ export default function App() {
     <ThemeProvider>
       <AuthProvider>
         <RootNavigator />
+        <ShopProvider>
+          <RootNavigator />
+        </ShopProvider>
       </AuthProvider>
     </ThemeProvider>
   );
