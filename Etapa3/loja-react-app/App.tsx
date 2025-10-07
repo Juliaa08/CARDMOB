@@ -12,7 +12,6 @@ export default function App() {
   return (
     <ThemeProvider>
       <AuthProvider>
-        <RootNavigator />
         <ShopProvider>
           <RootNavigator />
         </ShopProvider>
